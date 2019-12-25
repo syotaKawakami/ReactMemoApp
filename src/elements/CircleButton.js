@@ -6,7 +6,8 @@ import { createIconSet } from '@expo/vector-icons';
 
 const CustomIcon = createIconSet({
   pencil: '\uf303',
-  plus: '\uf067'
+  plus: '\uf067',
+  check: '\uf00c',
 }, 'FontAwesome');
 
 class CircleButton extends React.Component {
