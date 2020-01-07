@@ -1,17 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 import CircleButton from '../elements/CircleButton';
 
 class MemoEditScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.memoEditInput}>
-          <Text>Hi</Text>
-        </View>
-        <CircleButton>
-          {'check'}
-        </CircleButton>
+        <TextInput style={styles.memoEditInput} multiline />
+        <CircleButton name='check'></CircleButton>
       </View>
     );
   }
@@ -29,7 +25,9 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     paddingRight: 16,
     paddingBottom: 16,
-  }
+    fontSize: 16,
+  },
+
 });
 
 export default MemoEditScreen;
