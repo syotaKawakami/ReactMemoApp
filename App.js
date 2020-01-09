@@ -22,7 +22,16 @@ class App extends React.Component {
 
 const AppNavigator = createStackNavigator({
   Home: {
-    screen: MemoListScreen
+    screen: MemoListScreen,
+    navigationOptions: {
+      headerTitle: 'Memot',
+     headerStyle: {
+       backgroundColor: '#265366'
+     },
+     headerTitleStyle: {
+       color: '#fff',
+     }
+    }
   },
 })
 
