@@ -11,15 +11,15 @@ class LoginScreen extends React.Component {
   }
 
   handleSubmit() {
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then((user) => {
-
-    })
-    .catch((error) => {
-      
-    })
-    // this.props.navigation.navigate('Home');
-
+    const { email, password } = this.state;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        // console.log('user', user);
+        this.props.navigation.navigate('Home', { currentUser: user });
+      })
+      .catch((error) => {
+        console.log('error', error);
+      })
   }
 
   render() {
@@ -42,7 +42,7 @@ class LoginScreen extends React.Component {
           placeholder='Password'
           secureTextEntry />
 
-        <TouchableHighlight style={styles.button} onPress={ this.handleSubmit.bind(this) }>
+        <TouchableHighlight style={styles.button} onPress={this.handleSubmit.bind(this)}>
           <Text style={styles.buttonTitle}>ログインする</Text>
         </TouchableHighlight>
 
