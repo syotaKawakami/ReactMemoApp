@@ -6,16 +6,18 @@ import firebase from 'firebase';
 class LoginScreen extends React.Component {
 
   state = {
-    email: '',
-    password: '',
+    // email: '',
+    // password: '',
+    // for test
+    email: 'test@example.com',
+    password: 'password'
   }
 
   handleSubmit() {
     const { email, password } = this.state;
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((user) => {
-        // console.log('user', user);
-        this.props.navigation.navigate('Home', { currentUser: user });
+        this.props.navigation.navigate('Home');
       })
       .catch((error) => {
         console.log('error', error);
